@@ -9,6 +9,15 @@
     <script src='main.js'></script>
 </head>
 <body>
+    
+<?php
+    isset( $_POST['number'] ) ? $number = $_POST['number'] : $number = "";
+    if( !empty( $number ) ) {
+        for( $i=1; $i<=12; $i++ ) {
+            echo "<br/>{$number} x {$i} = ".( $number * $i );
+        }
+    }
+?>
     <b>โปรแกรมแม่สูตรคูณ</b>
     <form action="<?=$_SERVER['PHP_SELF'];?>" method="POST">
     <input type="number" name="number">
